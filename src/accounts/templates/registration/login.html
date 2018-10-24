@@ -1,0 +1,51 @@
+{% extends 'base_login.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+
+
+    <div class="container container-xs"><img class="mv-lg block-center img-responsive thumb64" src="{% static 'dashboard/img/logo.png' %}">
+            <form class="card b0 form-validate" id="user-login" action="" method="POST" name="loginForm" novalidate="">
+              <div class="card-offset pb0">
+                <div class="card-offset-item text-right"><a class="btn-raised btn btn-info btn-circle btn-lg" href="{% url 'register' %}"><em class="ion-person-add"></em></a></div>
+                <div class="card-offset-item text-right hidden">
+                  <div class="btn btn-success btn-circle btn-lg"><em class="ion-checkmark-round"></em></div>
+                </div>
+              </div>
+              <div class="card-heading">
+                <div class="card-title text-center">Login</div>
+              </div>
+              <div class="card-body">
+                <div class="mda-form-group float-label mda-input-group">
+                  <div class="mda-form-control">
+                    {% render_field form.username class="form-control" type="email" required="" name="accountName" %}
+                    
+                    <div class="mda-form-control-line"></div>
+                    <label>Email address</label>
+                  </div><span class="mda-input-group-addon"><em class="ion-ios-email-outline icon-lg"></em></span>
+                </div>
+                <div class="mda-form-group float-label mda-input-group">
+                  <div class="mda-form-control">
+                    {% render_field form.password class="form-control" type="password" required="" name="accountPassword" %}
+                
+                    <div class="mda-form-control-line"></div>
+                    <label>Password</label>
+                  </div><span class="mda-input-group-addon"><em class="ion-ios-locked-outline icon-lg"></em></span>
+                </div>
+                 {% csrf_token %}
+                 <input type="hidden" name='next' value="{{next}}" />
+              </div>
+              <button class="btn btn-primary btn-flat" type="submit">Authenticate</button>
+            </form>
+            <div class="text-center text-sm"><a class="text-inherit" href="">Forgot password?</a></div>
+    </div>
+
+
+{% endblock content %}
+
+
+
+
+

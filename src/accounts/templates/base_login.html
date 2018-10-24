@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from themicon.co/theme/centric/v1.9.5/html5jquery/app/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Oct 2018 21:27:10 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin Template">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>{% block title %}  {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/vendor-user.css' %}"/>
+    <!-- Application styles-->
+    <link rel="stylesheet" href="{% static 'dashboard/css/app.css' %}">
+  </head>
+  <body>
+    <div class="layout-container">
+      <div class="page-container bg-blue-grey-900">
+        <div class="container-full">
+        
+                {% block content %}
+
+
+                {% endblock content %}
+
+        </div>
+    </div>
+  </div>
+  <script src="{% static 'dashboard/js/vendor-user.js' %}"></script>
+  <!-- App script-->
+  <script src="{% static 'dashboard/js/app.js' %}"></script>
+</body>
+
+
+</html>
